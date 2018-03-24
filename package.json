@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CentennialCollege/COMP397-W2018-MailPilotDemo-B.git"
+    "url": "git+https://github.com/francisacheampong/COMP397-W2018-MidTerm-300756383.git"
   },
-  "author": "Tom Tsiliopoulos <tsiliopoulos@hotmail.com>",
+  "author": " francis <francisacheampong@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CentennialCollege/COMP397-W2018-MailPilotDemo-B/issues"
+    "url": "https://github.com/francisacheampong/COMP397-W2018-MidTerm-300756383/issues"
   },
-  "homepage": "https://github.com/CentennialCollege/COMP397-W2018-MailPilotDemo-B#readme",
+  "homepage": "https://github.com/francisacheampong/COMP397-W2018-MidTerm-300756383#readme",
   "devDependencies": {
     "@types/easeljs": "^1.0.0"
   },
