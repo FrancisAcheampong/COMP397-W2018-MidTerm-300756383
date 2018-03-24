@@ -30,7 +30,7 @@ var scenes;
             this._island = new objects.Island();
             // instantiate the cloud array
             this._clouds = new Array();
-            this._cloudNum = 3;
+            this._cloudNum = 1;
             // loop and add each cloud to the array
             for (var count = 0; count < this._cloudNum; count++) {
                 this._clouds[count] = new objects.Cloud();
@@ -59,6 +59,11 @@ var scenes;
                 // check collision between plane and current cloud
                 managers.Collision.Check(_this._plane, cloud);
             });
+            // if lives fall below zero switch scenes to the game over scene
+            if (this._scoreBoard.Score == 200) {
+                //this._engineSound.stop();
+                managers.Game.currentScene = config.Scene.LEVEL2;
+            }
             // if lives fall below zero switch scenes to the game over scene
             if (this._scoreBoard.Lives <= 0) {
                 this._engineSound.stop();

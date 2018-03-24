@@ -1,9 +1,8 @@
 module objects {
-  export class Ocean extends createjs.Bitmap {
+  export class Ocean1 extends createjs.Bitmap {
     // private instance variables
-    private _dy: number;
     private _dx: number;
-
+    private _dy: number;
     // public properties
 
     // Constructor
@@ -15,24 +14,21 @@ module objects {
     // private methods
 
     // reset the objects location to some value
-
-    
     private _reset():void {
-      this.y = -960;
-
+      this.x = -800;
+      this.y = 320;
+      
 
     }
 
-    
-
     // move the object to some new location
     private _move():void {
-      this.y += this._dy;
+      this.x += this._dx;
     }
 
     // check to see if some boundary has been passed
     private _checkBounds():void {
-      if(this.y >= 0) {
+      if(this.x >= -0) {
         this._reset();
       }
     }
@@ -41,7 +37,7 @@ module objects {
 
     // Initializes variables and creates new objects
     public Start():void {
-      this._dy = 5;
+      this._dx = 5;
       this._reset();
     }
 

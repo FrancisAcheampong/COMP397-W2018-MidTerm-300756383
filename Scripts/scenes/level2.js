@@ -23,17 +23,17 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         Level2Scene.prototype.Start = function () {
-            this._ocean = new objects.Ocean();
-            this._plane = new objects.Plane();
-            managers.Game.plane = this._plane;
+            this._ocean1 = new objects.Ocean1();
+            this._plane1 = new objects.Plane1();
+            managers.Game.plane1 = this._plane1;
             this._coin = new objects.Coin();
-            this._island = new objects.Island();
+            this._island1 = new objects.Island1();
             // instantiate the cloud array
-            this._clouds = new Array();
-            this._cloudNum = 3;
+            this._clouds1 = new Array();
+            this._cloudNum = 2;
             // loop and add each cloud to the array
             for (var count = 0; count < this._cloudNum; count++) {
-                this._clouds[count] = new objects.Cloud();
+                this._clouds1[count] = new objects.Cloud();
             }
             this._engineSound = createjs.Sound.play("engine");
             this._engineSound.loop = -1; // play forever
@@ -46,18 +46,18 @@ var scenes;
         // triggered every frame
         Level2Scene.prototype.Update = function () {
             var _this = this;
-            this._ocean.Update();
-            this._plane.Update();
-            this._coin.x = this._island.x;
-            this._coin.y = this._island.y;
+            this._ocean1.Update();
+            this._plane1.Update();
+            this._coin.x = this._island1.y;
+            this._coin.y = this._island1.x;
             this._coin.Update();
-            this._island.Update();
+            this._island1.Update();
             // check collision between plane and coin
-            managers.Collision.Check(this._plane, this._coin);
-            this._clouds.forEach(function (cloud) {
+            managers.Collision.Check(this._plane1, this._coin);
+            this._clouds1.forEach(function (cloud) {
                 cloud.Update();
                 // check collision between plane and current cloud
-                managers.Collision.Check(_this._plane, cloud);
+                managers.Collision.Check(_this._plane1, cloud);
             });
             // if lives fall below zero switch scenes to the game over scene
             if (this._scoreBoard.Lives <= 0) {
@@ -69,16 +69,16 @@ var scenes;
         Level2Scene.prototype.Main = function () {
             var _this = this;
             // add the ocean to the scene
-            this.addChild(this._ocean);
+            this.addChild(this._ocean1);
             // add the island to the scene
-            this.addChild(this._island);
+            this.addChild(this._island1);
             // add the coin to the scene
             this.addChild(this._coin);
             // add the plane to the scene
-            this.addChild(this._plane);
-            this.addChild(this._plane.planeFlash); // add the plane flashing effect
+            this.addChild(this._plane1);
+            this.addChild(this._plane1.planeFlash); // add the plane flashing effect
             // add clouds to the scene
-            this._clouds.forEach(function (cloud) {
+            this._clouds1.forEach(function (cloud) {
                 _this.addChild(cloud);
             });
             // add scoreboard labels to the scene

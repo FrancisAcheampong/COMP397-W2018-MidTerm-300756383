@@ -37,7 +37,7 @@ module scenes {
 
       // instantiate the cloud array
       this._clouds = new Array<objects.Cloud>();
-      this._cloudNum = 3;
+      this._cloudNum = 1;
       // loop and add each cloud to the array
       for (let count = 0; count < this._cloudNum; count++) {
         this._clouds[count] = new objects.Cloud();
@@ -75,10 +75,17 @@ module scenes {
       });
 
       // if lives fall below zero switch scenes to the game over scene
-      if(this._scoreBoard.Lives <= 0) {
+      if(this._scoreBoard.Score == 200 ) {
+        //this._engineSound.stop();
+        managers.Game.currentScene = config.Scene.LEVEL2;
+      }
+      // if lives fall below zero switch scenes to the game over scene
+       if(this._scoreBoard.Lives <= 0) {
         this._engineSound.stop();
         managers.Game.currentScene = config.Scene.OVER;
       }
+
+
 
     }
 
