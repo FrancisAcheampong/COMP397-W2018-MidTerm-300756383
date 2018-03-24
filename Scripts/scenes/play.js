@@ -60,7 +60,7 @@ var scenes;
                 managers.Collision.Check(_this._plane, cloud);
             });
             // if lives fall below zero switch scenes to the game over scene
-            if (this._scoreBoard.Score == 200) {
+            if (this._scoreBoard.Score == 500) {
                 //this._engineSound.stop();
                 managers.Game.currentScene = config.Scene.LEVEL2;
             }

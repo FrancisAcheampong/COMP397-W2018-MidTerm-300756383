@@ -28,7 +28,7 @@ module objects {
       this.planeFlash.alpha = 1;
       this.planeFlash.on("animationend", this._animationEnded.bind(this), false );
 
-      this.x = 320;
+      this.x = 0;
       this.y = 430;
     }
 
@@ -50,11 +50,11 @@ module objects {
 
      // keyboard controls
      if(managers.Game.keyboardManager.moveLeft) {
-       this.x -= 5;
+       this.y -= 5;
      }
 
      if(managers.Game.keyboardManager.moveRight) {
-       this.x += 5;
+       this.y += 5;
      }
 
      this.planeFlash.x = this.x;
@@ -65,13 +65,13 @@ module objects {
     // check to see if some boundary has been passed
     public CheckBounds():void {
       // right boundary
-      if(this.x >= 640 - this.halfWidth) {
-        this.x = 640 - this.halfWidth;
+      if(this.y >= 640 - this.halfHeight) {
+        this.y = 640 - this.halfHeight;
       }
 
       // left boundary
-      if(this.x <= this.halfWidth) {
-        this.x = this.halfWidth;
+      if(this.y <= this.halfHeight) {
+        this.y = this.halfHeight;
       }
     }
   }

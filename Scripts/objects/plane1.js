@@ -31,7 +31,7 @@ var objects;
             this.planeFlash = new objects.PlaneFlash();
             this.planeFlash.alpha = 1;
             this.planeFlash.on("animationend", this._animationEnded.bind(this), false);
-            this.x = 320;
+            this.x = 0;
             this.y = 430;
         };
         // updates the game object every frame
@@ -48,10 +48,10 @@ var objects;
             // this.x = objects.Game.stage.mouseX;
             // keyboard controls
             if (managers.Game.keyboardManager.moveLeft) {
-                this.x -= 5;
+                this.y -= 5;
             }
             if (managers.Game.keyboardManager.moveRight) {
-                this.x += 5;
+                this.y += 5;
             }
             this.planeFlash.x = this.x;
             this.planeFlash.y = this.y;
@@ -59,12 +59,12 @@ var objects;
         // check to see if some boundary has been passed
         Plane1.prototype.CheckBounds = function () {
             // right boundary
-            if (this.x >= 640 - this.halfWidth) {
-                this.x = 640 - this.halfWidth;
+            if (this.y >= 640 - this.halfHeight) {
+                this.y = 640 - this.halfHeight;
             }
             // left boundary
-            if (this.x <= this.halfWidth) {
-                this.x = this.halfWidth;
+            if (this.y <= this.halfHeight) {
+                this.y = this.halfHeight;
             }
         };
         return Plane1;
