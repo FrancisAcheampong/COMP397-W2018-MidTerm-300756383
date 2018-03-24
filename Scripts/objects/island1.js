@@ -10,12 +10,13 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var Island = /** @class */ (function (_super) {
-        __extends(Island, _super);
+    var Island1 = /** @class */ (function (_super) {
+        __extends(Island1, _super);
         // private instance variables
+        //private _dx:number;
         // public properties
         // Constructor
-        function Island() {
+        function Island1() {
             var _this = _super.call(this, "island") || this;
             _this.Start();
             return _this;
@@ -23,33 +24,33 @@ var objects;
         // private methods
         // public methods
         // Initializes variables and creates new objects
-        Island.prototype.Start = function () {
-            this._dy = 5;
+        Island1.prototype.Start = function () {
+            this._dx = 5;
             this.Reset();
         };
         // updates the game object every frame
-        Island.prototype.Update = function () {
+        Island1.prototype.Update = function () {
             this.Move();
             this.CheckBounds();
         };
         // reset the objects location to some value
-        Island.prototype.Reset = function () {
-            this.x = Math.floor((Math.random() * (640 - this.width)) + this.halfWidth);
-            this.y = -this.height;
+        Island1.prototype.Reset = function () {
+            this.y = Math.floor((Math.random() * (640 - this.height)) + this.halfHeight);
+            this.x = -this.width;
         };
         // move the object to some new location
-        Island.prototype.Move = function () {
-            this.y += this._dy;
+        Island1.prototype.Move = function () {
+            this.x += this._dx;
         };
         // check to see if some boundary has been passed
-        Island.prototype.CheckBounds = function () {
+        Island1.prototype.CheckBounds = function () {
             // check lower bounds
-            if (this.y >= 480 + this.height) {
+            if (this.x >= 480 + this.width) {
                 this.Reset();
             }
         };
-        return Island;
+        return Island1;
     }(objects.GameObject));
-    objects.Island = Island;
+    objects.Island1 = Island1;
 })(objects || (objects = {}));
-//# sourceMappingURL=island.1.js.map
+//# sourceMappingURL=island1.js.map

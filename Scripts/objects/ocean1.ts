@@ -16,7 +16,7 @@ module objects {
     // reset the objects location to some value
     private _reset():void {
       this.x = -800;
-      this.y = 320;
+      
       
 
     }
@@ -28,7 +28,7 @@ module objects {
 
     // check to see if some boundary has been passed
     private _checkBounds():void {
-      if(this.x >= -0) {
+      if(this.x <= 0) {
         this._reset();
       }
     }

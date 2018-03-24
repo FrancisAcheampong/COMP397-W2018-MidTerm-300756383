@@ -23,7 +23,6 @@ var objects;
         // reset the objects location to some value
         Ocean1.prototype._reset = function () {
             this.x = -800;
-            this.y = 320;
         };
         // move the object to some new location
         Ocean1.prototype._move = function () {
@@ -31,7 +30,7 @@ var objects;
         };
         // check to see if some boundary has been passed
         Ocean1.prototype._checkBounds = function () {
-            if (this.x >= -0) {
+            if (this.x <= 0) {
                 this._reset();
             }
         };
